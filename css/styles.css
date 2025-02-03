@@ -1,0 +1,32 @@
+header {
+    background-image: url("../img/circuit.jpeg");
+    color: white;
+}
+
+footer {
+    background-color: #847462;
+    color: white;
+}
+
+h3 {
+    color: #444444;
+}
+
+.t1 {
+    border-left: 10px solid #e2e2e2;
+}
+
+.t2 {
+    border-left: 10px solid #847462;
+}
+
+.t3 {
+    border-left: 10px solid #847462;
+}
+
+.t4 {
+    border-left: 10px solid #ffb864;
+}
+
+/*  e2e2e2
+    ffb864*/
