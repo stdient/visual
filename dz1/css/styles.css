@@ -1,5 +1,13 @@
+body {
+    margin: 0;
+}
+
 .background-color_blue {
     background-color: rgb(27, 84, 221);
+}
+
+.logo {
+    padding: 32px;
 }
 
 .text_white {
@@ -8,11 +16,13 @@
 
 .front_page {
     display: grid;
+    height: 100vh;
 }
 
 .aligment_center {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
 }
 
