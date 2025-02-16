@@ -1,0 +1,21 @@
+.background-color_blue {
+    background-color: rgb(27, 84, 221);
+}
+
+.text_white {
+    color: white;
+}
+
+.front_page {
+    display: grid;
+}
+
+.aligment_center {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer {
+    background-color: rgb(232, 232, 232);
+}

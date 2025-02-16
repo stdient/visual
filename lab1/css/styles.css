@@ -1,5 +1,7 @@
 header {
     background-image: url("../img/circuit.jpeg");
+    background-size: cover;
+    background-position: center;
     color: white;
 }
 
@@ -28,5 +30,10 @@ h3 {
     border-left: 10px solid #ffb864;
 }
 
-/*  e2e2e2
-    ffb864*/
+/*  colors
+    e2e2e2
+    ffb864
+    847462
+    444444
+    white
+*/

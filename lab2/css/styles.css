@@ -1,0 +1,125 @@
+footer {
+    background-color: rgb(103, 188, 253);
+    padding: 10px 0;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 100%;
+}
+
+nav {
+    height: 100%;
+    margin-right: 30px;
+}
+
+header {
+    background-color: rgb(103, 188, 253);
+}
+
+.d-grid {
+    display: grid;
+}
+
+.gtc-prime {
+    grid-template-columns: 1fr 3fr;
+}
+
+.ta-c {
+    text-align: center;
+}
+
+.m-5 {
+    margin: 2px;
+}
+
+.bc-yellow {
+    background-color: rgb(255, 200, 0);
+}
+
+.bc-gray {
+    background-color: rgb(171, 171, 171);
+}
+
+.wrap-sample {
+    width: 95px;
+    height: 95px;
+    border: 3px solid yellow;
+    display: flex;
+}
+
+.sample {
+    width: auto;
+    height: auto;
+    border: 3px solid yellow;
+    display: flex;
+}
+
+.sample__rect {
+    background-color: rgb(41, 144, 255);
+    border: 1px solid black;
+}
+
+.bc-orange {
+    background-color: orange;
+}
+
+.bc-green {
+    background-color: greenyellow;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.fd-row {
+    flex-direction: row;
+}
+
+.jc-sa {
+    justify-content: space-around;
+}
+
+.fd-row-rev {
+    flex-direction: row-reverse;
+}
+
+.fd-col {
+    flex-direction: column;
+}
+
+.fd-col-rev {
+    flex-direction: column-reverse;
+}
+
+.fw-nwrap {
+    flex-wrap: nowrap;
+    overflow: auto;
+}
+
+.fw-wrap {
+    flex-wrap: wrap;
+}
+
+.fw-wrap-rev {
+    flex-wrap: wrap-reverse;
+}
+
+.jc-fs {
+    justify-content: start;
+}
+
+.jc-fe {
+    justify-content: end;
+}
+
+.jc-c {
+    justify-content: center;
+}
