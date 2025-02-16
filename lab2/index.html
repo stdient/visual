@@ -4,147 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>PR02</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 
-<body class="d-grid">
-    <header>
-        <h2 class="ta-c">Примеры работы свойств flexbox'a</h2>
-    </header>
-
-    <div class="d-grid gtc-prime">
-        <aside>
-            <nav class="d-flex fd-col bc-gray">
-                <a href="#fd" class="bc-yellow m-5">Свойство flex-direction</a>
-                <a href="#fw" class="bc-yellow m-5">Свойство flex-wrap</a>
-                <a href="#jc" class="bc-yellow m-5">Свойство justify-content</a>
-            </nav>
-        </aside>
-
-        <main>
-            <h4 id="fd">Flex-direction</h4>
-            <section class="d-flex fd-row jc-sa">
-                <article>
-                    <h5>Flex-direction: row</h5>
-                    <div class="sample fd-row">
-                        <div class="sample__rect bc-orange">Start</div>
-                        <div class="sample__rect">Item 1</div>
-                        <div class="sample__rect">Item 2</div>
-                        <div class="sample__rect">Item 3</div>
-                        <div class="sample__rect bc-green">End</div>
-                    </div>
-                </article>
-
-                <article>
-                    <h5>Flex-direction: row-reverse</h5>
-                    <div class="sample fd-row-rev">
-                        <div class="sample__rect bc-orange ">Start</div>
-                        <div class="sample__rect">Item 1</div>
-                        <div class="sample__rect">Item 2</div>
-                        <div class="sample__rect">Item 3</div>
-                        <div class="sample__rect bc-green">End</div>
-                    </div>
-                </article>
-
-                <article>
-                    <h5>Flex-direction: column</h5>
-                    <div class="sample fd-col">
-                        <div class="sample__rect bc-orange ">Start</div>
-                        <div class="sample__rect">Item 1</div>
-                        <div class="sample__rect">Item 2</div>
-                        <div class="sample__rect">Item 3</div>
-                        <div class="sample__rect bc-green">End</div>
-                    </div>
-                </article>
-
-                <article>
-                    <h5>Flex-direction: column-reverse</h5>
-                    <div class="sample fd-col-rev">
-                        <div class="sample__rect bc-orange ">Start</div>
-                        <div class="sample__rect">Item 1</div>
-                        <div class="sample__rect">Item 2</div>
-                        <div class="sample__rect">Item 3</div>
-                        <div class="sample__rect bc-green">End</div>
-                    </div>
-                </article>
-            </section>
-
-            <h4 id="fw">Flex-wrap</h4>
-            <section class="d-flex fd-row jc-sa">
-                <article>
-                    <h5>Flex-wrap: nowrap</h5>
-                    <div class="wrap-sample fw-nwrap">
-                        <div class="sample__rect bc-orange ">Start</div>
-                        <div class="sample__rect">Item 1</div>
-                        <div class="sample__rect">Item 2</div>
-                        <div class="sample__rect">Item 3</div>
-                        <div class="sample__rect bc-green">End</div>
-                    </div>
-                </article>
-
-                <article>
-                    <h5>Flex-wrap: wrap</h5>
-                    <div class="wrap-sample fw-wrap">
-                        <div class="sample__rect bc-orange ">Start</div>
-                        <div class="sample__rect">Item 1</div>
-                        <div class="sample__rect">Item 2</div>
-                        <div class="sample__rect">Item 3</div>
-                        <div class="sample__rect bc-green">End</div>
-                    </div>
-                </article>
-
-                <article>
-                    <h5>Flex-wrap: wrap-reverse</h5>
-                    <div class="wrap-sample fw-wrap-rev">
-                        <div class="sample__rect bc-orange ">Start</div>
-                        <div class="sample__rect">Item 1</div>
-                        <div class="sample__rect">Item 2</div>
-                        <div class="sample__rect">Item 3</div>
-                        <div class="sample__rect bc-green">End</div>
-                    </div>
-                </article>
-            </section>
-
-            <h4 id="jc">Justify-content</h4>
-            <section class="d-flex fd-row jc-sa">
-                <article>
-                    <h5>Justify-content: flex-start</h5>
-                    <div class="sample jc-fs">
-                        <div class="sample__rect bc-orange ">Start</div>
-                        <div class="sample__rect">Item 1</div>
-                        <div class="sample__rect">Item 2</div>
-                        <div class="sample__rect">Item 3</div>
-                        <div class="sample__rect bc-green">End</div>
-                    </div>
-                </article>
-
-                <article>
-                    <h5>Justify-content: flex-end</h5>
-                    <div class="sample jc-fe">
-                        <div class="sample__rect bc-orange ">Start</div>
-                        <div class="sample__rect">Item 1</div>
-                        <div class="sample__rect">Item 2</div>
-                        <div class="sample__rect">Item 3</div>
-                        <div class="sample__rect bc-green">End</div>
-                    </div>
-                </article>
-
-                <article>
-                    <h5>Justify-content: center</h5>
-                    <div class="sample jc-c">
-                        <div class="sample__rect bc-orange ">Start</div>
-                        <div class="sample__rect">Item 1</div>
-                        <div class="sample__rect">Item 2</div>
-                        <div class="sample__rect">Item 3</div>
-                        <div class="sample__rect bc-green">End</div>
-                    </div>
-                </article>
-            </section>
-        </main>
+<body>
+    <div class="container">
+        <header class="al-center">header</header>
+        <aside class="left al-mid pt-3">left</aside>
+        <main class="al-mid pt-3">main</main>
+        <aside class="right al-mid pt-3">right</aside>
+        <footer class="al-center">footer</footer>
     </div>
-
-    <footer class="ta-c">Работа выполнена струдентом "ИП314"; ФИО студента: Рыбкин Даниил Алексеевич</footer>
 </body>
 
 </html>
