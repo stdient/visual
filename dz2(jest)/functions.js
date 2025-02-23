@@ -1,27 +1,30 @@
-function quick_sort_full(l, r, arr) {
-  let i = l, j = r;
-  let x = arr[Math.floor((l + r) / 2)];
-
-  while (i <= j) {
-    while (arr[i] < x) ++i;
-    while (arr[j] > x) --j;
-    if (i <= j) {
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-      ++i; --j;
+export function orderBy(obj_arr, ...properties) {
+  // проверка входных значений
+  for (let i = 0; i < properties.length; ++i) {
+    if (typeof (properties[i]) !== 'string') {
+      throw new Error("свойства должны быть строками");
+    }
+    for (let j = 0; j < obj_arr.length; ++j) {
+      if (!(properties[i] in obj_arr[j])) {
+        throw new Error("свойства должны соответсвовать передаваемому объекту");
+      }
+      if (i == 0) {
+        if (typeof (obj_arr[j]) !== 'object')
+          throw new Error("массив должен состоять из объектов");
+      }
     }
   }
 
-  if (l < j) quick_sort_full(l, j, arr);
-  if (i < r) quick_sort_full(i, r, arr);
-}
+  // копирование массива объектов
+  let result = obj_arr.slice();
 
-function quick_sort(arr) {
-  quick_sort_full(0, arr.length - 1, arr);
-}
+  // сортировка
+  for (let i = properties.length; i >= 0; --i) {
+    result.sort((a, b) => {
+      if (typeof a[properties[i]] === 'string') { return a[properties[i]].localeCompare(b[properties[i]]); }
+      else return a[properties[i]] - b[properties[i]];
+    });
+  }
 
-function orderBy(obj_arr, property_arr) {
-  if (typeof (obj_arr) != 'object')
-    throw new Error("First argument is incorrect");
-
-  obj_arr_sorted = obj_arr.slice();
+  return result;
 }
