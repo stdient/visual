@@ -22,3 +22,5 @@ export async function loadData() {
 
   return data_arr;
 }
+
+module.exports.loadData = loadData;
