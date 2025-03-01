@@ -22,7 +22,3 @@ export async function loadData() {
 
   return data_arr;
 }
-
-// demo
-let data = await loadData();
-console.log(data);

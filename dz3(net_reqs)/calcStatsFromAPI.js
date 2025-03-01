@@ -6,6 +6,3 @@ export async function calcStatsFromAPI() {
   let stat = calcStats(data);
   return stat;
 }
-
-let stat = await calcStatsFromAPI();
-console.log(stat);

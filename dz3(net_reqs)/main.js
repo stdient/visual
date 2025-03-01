@@ -1,3 +1,3 @@
 import { calcStatsFromAPI } from './calcStatsFromAPI.js'
 
-// console.log(calcStatsFromAPI());
+console.log(await calcStatsFromAPI());
