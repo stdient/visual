@@ -1,4 +1,4 @@
-export async function getBookDataFromAPI() {
+async function getBookDataFromAPI() {
   let response = await fetch('https://fakeapi.extendsclass.com/books');
   if (response.ok) {
     let json = await response.json();
@@ -9,3 +9,7 @@ export async function getBookDataFromAPI() {
     return;
   }
 }
+
+(async () => {
+  console.log(await getBookDataFromAPI());
+})();

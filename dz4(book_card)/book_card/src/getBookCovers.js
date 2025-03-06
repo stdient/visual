@@ -1,6 +1,6 @@
 import { getBookDataFromAPI } from "./getBookDataFromAPI.js";
 
-async function fetchLinksToCovers(isbns) {
+export async function fetchLinksToCovers(isbns) {
   let links = [];
   for (let isbn of isbns) {
     let response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=isbn:${isbn}`);
@@ -13,7 +13,7 @@ async function fetchLinksToCovers(isbns) {
   return links;
 }
 
-async function getLinksToCovers() {
+export async function getLinksToCovers() {
   let book_data = await getBookDataFromAPI();
   let books = book_data;
   let isbns = [];
@@ -25,7 +25,7 @@ async function getLinksToCovers() {
   return await fetchLinksToCovers(isbns);
 }
 
-async function getCovers() {
+export async function getCovers() {
   let links_to_covers = await getLinksToCovers();
   let covers = [];
   for (let link of links_to_covers) {

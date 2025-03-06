@@ -32,7 +32,17 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.book_name {
+  font-size: medium;
+}
+
+.book_autor {
+  font-size: small;
+  color: darkgray;
 }

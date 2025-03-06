@@ -1,22 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import BookCard from './BookCard';
+import { useState, useEffect } from 'react'
+import getBookDataFromAPI from './getBookDataFromAPI';
 
 function App() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    (async () => { setData(await getBookDataFromAPI()) })();
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {data.map((item) => {
+          return <BookCard title={item.title} author={item.author}></BookCard>
+        })}
       </header>
     </div>
   );
