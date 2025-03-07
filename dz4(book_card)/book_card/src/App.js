@@ -2,7 +2,6 @@ import './App.css';
 import BookCard from './BookCard';
 import { useState, useEffect } from 'react'
 import getBookDataFromAPI from './getBookDataFromAPI';
-import { getCovers } from './getBookCovers';
 
 function App() {
   let [data, setData] = useState(null);
