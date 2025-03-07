@@ -7,7 +7,7 @@ export async function fetchLinksToCovers(isbns) {
     if (response.ok) {
       let data = await response.json();
       if (data.totalItems > 0)
-        links.push(data.items[0].volumeInfo.imageLinks.thumbnail);
+        links.push(data.items[0]?.volumeInfo?.imageLinks?.thumbnail);
     }
   }
   return links;

@@ -2,22 +2,35 @@ import './App.css';
 import BookCard from './BookCard';
 import { useState, useEffect } from 'react'
 import getBookDataFromAPI from './getBookDataFromAPI';
+import { getCovers } from './getBookCovers';
 
 function App() {
-  const [data, setData] = useState(null);
+  let [data, setData] = useState(null);
+  let [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    (async () => { setData(await getBookDataFromAPI()) })();
+    (async () => {
+      let data = await getBookDataFromAPI();
+      setData(data);
+      setLoading(false);
+    })();
   }, []);
 
+  if (loading) return (
+    <div className="App">
+      <p>Загрузка...</p>
+    </div>
+  );
   return (
     <div className="App">
       <header className="App-header">
-        {data.map((item) => {
-          return <BookCard title={item.title} author={item.author}></BookCard>
-        })}
+        {
+          data.map((book, index) => {
+            return <BookCard title={book.title} authors={book.authors}></BookCard>
+          })
+        }
       </header>
-    </div>
+    </div >
   );
 }
 
