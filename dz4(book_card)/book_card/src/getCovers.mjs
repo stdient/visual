@@ -1,6 +1,6 @@
-import getLinksToCovers from "./getLinksToCovers";
+import getLinksToCovers from "./getLinksToCovers.mjs";
 
-async function getCovers() {
+export default async function getCovers() {
   let links_to_covers = await getLinksToCovers();
   let covers = [];
   for (let link of links_to_covers) {
@@ -12,5 +12,3 @@ async function getCovers() {
   }
   return covers;
 }
-
-export default getCovers;

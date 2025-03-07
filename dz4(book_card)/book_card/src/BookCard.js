@@ -17,6 +17,7 @@ function BookCard(props) {
       devide_symbol = '';
     if (!(author === null || author === undefined || author === ''))
       return <span className='book_author'>{author}{devide_symbol}</span>
+    else return <></>;
   })
 
   return (
