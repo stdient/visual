@@ -21,7 +21,7 @@ function BookCard(props) {
   })
 
   return (
-    <div class='book_container'>
+    <div className='book_container'>
       <img src={imgSrc} alt='обложка'></img>
       <p className='book_name'>{props.title}</p>
       {authors}
