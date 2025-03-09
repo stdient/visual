@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 
 function App() {
   const [books, setBooks] = useState([]);
+  let [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadBooks = async () => {
@@ -22,11 +23,22 @@ function App() {
       );
 
       setBooks(booksWithCovers);
+      setLoading(false);
     };
 
     loadBooks();
   }, []);
 
+
+  if (loading) {
+    return (
+      <div className='App'>
+        <div className='App-header'>
+          <p>Загрузка...</p>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className='App'>
       <div className='App-header'>
