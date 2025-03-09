@@ -1,15 +1,8 @@
 import React from 'react'
-import { useState } from 'react';
 
 function BookCard(props) {
   if (!props.authors)
     props.authors.push('Unknown');
-
-  let [imgSrc, setImgSrc] = useState(null);
-  if (props.img) {
-    let blobURL = URL.createObjectURL(props.img);
-    setImgSrc(blobURL);
-  }
 
   let authors = props.authors.map((author, index) => {
     let devide_symbol = ', ';
@@ -22,7 +15,7 @@ function BookCard(props) {
 
   return (
     <div className='book_container'>
-      <img src={imgSrc} alt='обложка'></img>
+      <img src={props.img} alt='обложка'></img>
       <p className='book_name'>{props.title}</p>
       {authors}
     </div>

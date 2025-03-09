@@ -1,37 +1,45 @@
 import './App.css';
 import BookCard from './BookCard';
 import { useState, useEffect } from 'react'
-import getBookDataFromAPI from './getBookDataFromAPI.mjs';
-import getCovers from './getCovers.mjs';
 
 function App() {
-  let [data, setData] = useState(null);
-  let [loading, setLoading] = useState(true);
+  const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    (async () => {
-      let data = await getBookDataFromAPI();
-      setData(data);
-      setLoading(false);
-    })();
+    const loadBooks = async () => {
+      const response = await fetch('https://fakeapi.extendsclass.com/books');
+      const data = await response.json();
+
+      const booksWithCovers = await Promise.all(
+        data.map(async (book) => {
+          const coverResponse = await fetch(
+            `https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg`
+          );
+          const coverBlob = await coverResponse.blob();
+          const coverUrl = URL.createObjectURL(coverBlob);
+          return { ...book, coverImage: coverUrl };
+        })
+      );
+
+      setBooks(booksWithCovers);
+    };
+
+    loadBooks();
   }, []);
 
-  if (loading) return (
-    <div className="App">
-      <p>Загрузка...</p>
+  return (
+    <div className='App'>
+      <div className='App-header'>
+        {books.map((book) => (
+          <BookCard
+            img={book.coverImage}
+            title={book.title}
+            authors={book.authors}
+          />
+        ))}
+      </div>
     </div>
   );
-  return (
-    <div className="App">
-      <header className="App-header">
-        {
-          data.map((book, index) => {
-            return <BookCard title={book.title} authors={book.authors}></BookCard>
-          })
-        }
-      </header>
-    </div >
-  );
-}
+};
 
 export default App;
