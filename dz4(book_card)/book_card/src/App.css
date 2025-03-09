@@ -19,7 +19,8 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  padding: 40px 1vw;
+  padding: 40px 0;
+  justify-content: center;
   row-gap: 30px;
   font-size: calc(10px + 2vmin);
   color: white;
