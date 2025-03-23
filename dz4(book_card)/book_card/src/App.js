@@ -1,6 +1,7 @@
 import './App.css';
 import BookCard from './BookCard';
 import { useState, useEffect } from 'react'
+import Search from './Search'
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -42,6 +43,7 @@ function App() {
   return (
     <div className='App'>
       <div className='App-header'>
+        <Search></Search>
         {books.map((book) => (
           <BookCard
             img={book.coverImage}

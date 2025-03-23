@@ -58,3 +58,32 @@
   font-size: small;
   color: darkgray;
 }
+
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.search-bar__input {
+  width: 85vw;
+  height: 5vh;
+  border: none;
+}
+
+.search-bar__btn {
+  background-color: yellow;
+  height: 5vh;
+  border: none;
+}
+
+.search-bar__btn__img {
+  height: inherit;
+}
+
+.container__selectors {
+  display: flex;
+  padding-left: 6vw;
+  justify-content: start;
+}
