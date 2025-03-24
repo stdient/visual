@@ -4,10 +4,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const API_KEY = '957644072ea706ae572a3a7bc8e9a2f0';
+const week_names = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
 
 function App() {
   const [forecast, setForecast] = useState(null);
-  const [city, setCity] = useState('Moscow');
+  const [city, setCity] = useState('Novosibirsk');
 
   useEffect(() => {
     const fetchForecast = async () => {
@@ -22,15 +23,16 @@ function App() {
     };
 
     fetchForecast();
-    const interval = setInterval(fetchForecast, 10800000); // Обновление каждые 3 часа
+    const amnt_hours = 3;
+    const hours_to_milisec = amnt_hours * 60 * 60 * 100;
+    const interval = setInterval(fetchForecast, hours_to_milisec);
     return () => clearInterval(interval);
   }, [city]);
 
-  // Группировка прогноза по дням
   const groupForecastByDay = (forecastList) => {
     const grouped = {};
     forecastList.forEach((item) => {
-      const date = item.dt_txt.split(' ')[0]; // Получаем дату без времени
+      const date = item.dt_txt.split(' ')[0];
       if (!grouped[date]) {
         grouped[date] = [];
       }
@@ -39,9 +41,15 @@ function App() {
     return grouped;
   };
 
+  const date = new Date();
+  const date_of_month = date.getDate();
+  const week_day = date.getDay();
+
   return (
     <div>
+      <span className='date'>{week_names[week_day]}, {date_of_month}</span>
       <CitySelector setCity={setCity} />
+      <p style={{ color: 'white', fontSize: '2em' }}>Current city: {city}</p>
       {forecast && <ForecastDisplay forecast={forecast} />}
     </div>
   );
@@ -70,11 +78,10 @@ function CitySelector({ setCity }) {
 
 function ForecastDisplay({ forecast }) {
   return (
-    <div>
-      <h2>Прогноз погоды</h2>
+    <div className='forecast__container'>
       {Object.keys(forecast).map((date) => (
         <div key={date}>
-          <h3>{new Date(date).toLocaleDateString()}</h3>
+          <h3>{week_names[new Date(date).getDay()]}, {new Date(date).getDate()}</h3>
           <div style={{ display: 'flex', overflowX: 'auto' }}>
             {forecast[date].map((item, index) => (
               <WeatherCard key={index} weather={item} />
@@ -89,8 +96,8 @@ function ForecastDisplay({ forecast }) {
 function WeatherCard({ weather }) {
   return (
     <div style={{ margin: '10px', padding: '10px', border: '1px solid #ccc', borderRadius: '5px' }}>
-      <p>{new Date(weather.dt * 1000).toLocaleTimeString()}</p>
-      <p>{weather.main.temp}°C</p>
+      <p>{new Date(weather.dt * 1000).toLocaleTimeString().substring(0, 5)}</p>
+      <p>{(weather.main.temp).toFixed(1)}°C</p>
       <WeatherIcon icon={weather.weather[0].icon} />
       <p>{weather.weather[0].description}</p>
       <p>Влажность: {weather.main.humidity}%</p>
