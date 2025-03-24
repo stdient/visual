@@ -1,0 +1,57 @@
+[
+    {
+        "name": "Novosibirsk",
+        "local_names": {
+            "uk": "Новосибірськ",
+            "fr": "Novossibirsk",
+            "pt": "Novosibirsk",
+            "lv": "Novosibirska",
+            "ca": "Districte urbà de Novossibirsk",
+            "uz": "Novosibirsk",
+            "az": "Novosibirsk",
+            "ja": "ノヴォシビルスク管区",
+            "hi": "नोवोसिबिर्स्क",
+            "fi": "Novosibirsk",
+            "kk": "Новосібір",
+            "et": "Novosibirsk",
+            "ku": "Novosîbîrsk",
+            "da": "Novosibirsk",
+            "de": "Nowosibirsk",
+            "kn": "ನೋವೋಸಿಬಿರ್ಸ್ಕ್",
+            "ko": "노보시비르스크",
+            "oc": "Novosibirsk",
+            "sl": "Novosibirsk",
+            "ar": "نوفوسيبيرسك",
+            "cs": "Novosibirsk",
+            "pl": "Nowosybirsk",
+            "en": "Novosibirsk",
+            "ro": "Novosibirsk",
+            "he": "נובוסיבירסק",
+            "ru": "Новосибирск",
+            "lt": "Novosibirskas",
+            "be": "Новасібірск",
+            "hr": "Novosibirsk",
+            "es": "Novosibirsk",
+            "sk": "Novosibirsk"
+        },
+        "lat": 55.0282171,
+        "lon": 82.9234509,
+        "country": "RU",
+        "state": "Novosibirsk Oblast"
+    },
+    {
+        "name": "Novosibirsk",
+        "local_names": {
+            "ja": "ノヴォシビルスク",
+            "ku": "Novosîbîrsk",
+            "ru": "Новосибирск",
+            "zh": "新西伯利亚",
+            "ca": "Novossibirsk",
+            "en": "Novosibirsk"
+        },
+        "lat": 54.96781445,
+        "lon": 82.95159894278376,
+        "country": "RU",
+        "state": "Novosibirsk Oblast"
+    }
+]

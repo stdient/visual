@@ -1,0 +1,9 @@
+.forecast__container {
+  color: white;
+}
+
+.date {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
