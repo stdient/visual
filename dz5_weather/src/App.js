@@ -1,11 +1,10 @@
 import './App.css';
+import TodayWeather from './components/TodayWeather'
 
 function App() {
   return (
     <div className="App">
-      <section>
-        <span className='today'></span>
-      </section>
+      <TodayWeather />
       <section className="other_days">
       </section>
     </div>
