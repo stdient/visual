@@ -1,0 +1,39 @@
+td:first-child {
+    background-color: lightgray;
+    width: inherit;
+    cursor: default;
+}
+
+th:first-child {
+    height: 1em;
+    width: 1em;
+}
+
+th, td {
+    border: 1px solid black;
+    background-color: white;
+    text-align: center;
+}
+
+td { cursor: pointer }
+
+th {
+    background-color: lightgray;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    height: 90vh;
+    overflow: scroll;
+}
+
+.table__title {
+    text-align: center;
+    padding: 0.5em;
+    color: white;
+}
+
+.DataSet {
+    height: 100vh;
+}
