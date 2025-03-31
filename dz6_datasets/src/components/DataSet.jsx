@@ -29,7 +29,6 @@ const DataSet = (props) => {
         }
     }, []);
 
-
     return (
         <div className="DataSet">
             <h3 className="table__title">{props.title}</h3>
@@ -49,14 +48,25 @@ const DataSet = (props) => {
                                 if (isCtrlPressed) {
                                     if (col_idx === 0) {
                                         let all_items = [];
-                                        for (let i = 0; i < props.table_data[row_idx].length; ++i) {
-                                            all_items.push({
-                                                'row': row_idx,
-                                                'col': i,
-                                            });
+                                        let all_lines = [...selectedLines];
+
+                                        if (!all_lines.includes(row_idx)) all_lines.push(row_idx);
+                                        else {
+                                            all_lines = all_lines.filter(line => line !== row_idx);
                                         }
-                                        setPrevSelectAllLine(true);
+
+                                        for (let j = 0; j < all_lines.length; j++) {
+                                            let cur_row_idx = all_lines[j];
+                                            for (let i = 0; i < props.table_data[cur_row_idx].length; ++i) {
+                                                all_items.push({
+                                                    'row': cur_row_idx,
+                                                    'col': i,
+                                                });
+                                            }
+                                        }
+
                                         setSelectedItems(all_items);
+                                        setSelectedLines([...all_lines]);
                                     }
                                     else if (col_idx >= 1) {
                                         let all_items = [...selectedItems];
@@ -71,6 +81,7 @@ const DataSet = (props) => {
                                                 'col': col_idx
                                             });
                                         }
+
                                         setSelectedItems(all_items);
                                         setPrevSelectAllLine(false);
                                         setSelectedLines([]);

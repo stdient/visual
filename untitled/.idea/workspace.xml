@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b468608e-e11a-4134-b440-bc9c8006e1ee" name="Changes" comment="add .xml file">
-      <change afterPath="$PROJECT_DIR$/../dz6_datasets/src/components/DataSet.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dz6_datasets/src/components/DataSet.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dz6_datasets/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/../dz6_datasets/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dz6_datasets/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../dz6_datasets/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dz6_datasets/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../dz6_datasets/src/index.css" afterDir="false" />
+    <list default="true" id="b468608e-e11a-4134-b440-bc9c8006e1ee" name="Changes" comment="save progress before modify multiselect all line functions">
+      <change beforePath="$PROJECT_DIR$/../dz6_datasets/src/components/DataSet.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../dz6_datasets/src/components/DataSet.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,25 +70,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "m",
-    "ignore.virus.scanning.warn.message": "true",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "npm.npm start.executor": "Run",
-    "ts.external.directory.path": "D:\\Apps\\webstorm\\WebStorm 2024.3.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;m&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.npm start.executor&quot;: &quot;Run&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Apps\\webstorm\\WebStorm 2024.3.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
@@ -123,7 +120,8 @@
       <option name="presentableId" value="Default" />
       <updated>1743323448566</updated>
       <workItem from="1743323449624" duration="3977000" />
-      <workItem from="1743335888604" duration="16329000" />
+      <workItem from="1743335888604" duration="18073000" />
+      <workItem from="1743380423623" duration="3625000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add new dz project">
       <option name="closed" value="true" />
@@ -149,15 +147,35 @@
       <option name="project" value="LOCAL" />
       <updated>1743323871861</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="save progress before modify multiselect all line functions">
+      <option name="closed" value="true" />
+      <created>1743355605950</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1743355605950</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: add new dz project" />
     <MESSAGE value="add .xml file" />
-    <option name="LAST_COMMIT_MESSAGE" value="add .xml file" />
+    <MESSAGE value="save progress before modify multiselect all line functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="save progress before modify multiselect all line functions" />
   </component>
 </project>
