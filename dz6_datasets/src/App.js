@@ -18,6 +18,9 @@ function App() {
   return (
       <div className="App">
           <DataSet title={"Main table"}  table_titles={table_titles} table_data={table_data} />
+
+          {/*демонстрация обработки не переданного пропса*/}
+          {/*<DataSet title={"Main table"} table_data={table_data} />*/}
       </div>
   );
 }

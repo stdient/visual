@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b468608e-e11a-4134-b440-bc9c8006e1ee" name="Changes" comment="save progress before modify multiselect all line functions">
+    <list default="true" id="b468608e-e11a-4134-b440-bc9c8006e1ee" name="Changes" comment="version without render props">
+      <change beforePath="$PROJECT_DIR$/../dz6_datasets/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../dz6_datasets/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../dz6_datasets/src/components/DataSet.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../dz6_datasets/src/components/DataSet.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -121,7 +122,9 @@
       <updated>1743323448566</updated>
       <workItem from="1743323449624" duration="3977000" />
       <workItem from="1743335888604" duration="18073000" />
-      <workItem from="1743380423623" duration="3625000" />
+      <workItem from="1743380423623" duration="4653000" />
+      <workItem from="1743395749313" duration="230000" />
+      <workItem from="1743396131276" duration="2391000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add new dz project">
       <option name="closed" value="true" />
@@ -155,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743355605950</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="version without render props">
+      <option name="closed" value="true" />
+      <created>1743384152651</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1743384152651</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,6 +187,7 @@
     <MESSAGE value="feat: add new dz project" />
     <MESSAGE value="add .xml file" />
     <MESSAGE value="save progress before modify multiselect all line functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="save progress before modify multiselect all line functions" />
+    <MESSAGE value="version without render props" />
+    <option name="LAST_COMMIT_MESSAGE" value="version without render props" />
   </component>
 </project>

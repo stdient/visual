@@ -1,0 +1,20 @@
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Selector {
+    border: 3px solid deepskyblue;
+    width: 100vw;
+    text-align: center;
+}
+
+.List__element {
+    text-align: left;
+}
+
+.List {
+    padding-left: 4em;
+    border: 3px solid deepskyblue;
+}

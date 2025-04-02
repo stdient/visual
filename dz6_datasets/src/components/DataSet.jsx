@@ -1,7 +1,11 @@
 import './DataSet.css'
 import {useEffect, useState} from 'react';
 
-const DataSet = (props) => {
+const DataSet = ({title, table_titles, table_data}) => {
+    if (table_titles === undefined) {
+        table_titles = [...table_data[0]];
+    }
+
     const [selectedItems, setSelectedItems] = useState([]);
     const [isCtrlPressed, setIsCtrlPressed] = useState(false);
     const [prevSelectAllLine, setPrevSelectAllLine] = useState(false);
@@ -31,17 +35,17 @@ const DataSet = (props) => {
 
     return (
         <div className="DataSet">
-            <h3 className="table__title">{props.title}</h3>
+            <h3 className="table__title">{title}</h3>
             <table className="table">
                 <thead>
                 <tr>
-                    {props.table_titles.map((item, index) => (
+                    {table_titles.map((item, index) => (
                         <th key={index}>{item}</th>
                     ))}
                 </tr>
                 </thead>
                 <tbody>
-                {props.table_data.map((row, row_idx) => (
+                {table_data.map((row, row_idx) => (
                     <tr key={row_idx}>
                         {row.map((cell, col_idx) => (
                             <td key={col_idx} onClick={() => {
@@ -57,7 +61,7 @@ const DataSet = (props) => {
 
                                         for (let j = 0; j < all_lines.length; j++) {
                                             let cur_row_idx = all_lines[j];
-                                            for (let i = 0; i < props.table_data[cur_row_idx].length; ++i) {
+                                            for (let i = 0; i < table_data[cur_row_idx].length; ++i) {
                                                 all_items.push({
                                                     'row': cur_row_idx,
                                                     'col': i,
@@ -90,7 +94,7 @@ const DataSet = (props) => {
                                 else {
                                     if (col_idx === 0 && !selectedLines.some(it => it === row_idx)) {
                                         let all_items = [];
-                                        for (let i = 0; i < props.table_data[row_idx].length; ++i) {
+                                        for (let i = 0; i < table_data[row_idx].length; ++i) {
                                             all_items.push({
                                                 'row': row_idx,
                                                 'col': i,
