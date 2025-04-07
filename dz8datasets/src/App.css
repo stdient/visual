@@ -1,0 +1,75 @@
+.comments-app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.data-set table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.data-set th,
+.data-set td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.data-set .selection-column {
+  width: 30px;
+}
+
+.data-set .selection-cell {
+  cursor: pointer;
+  user-select: none;
+}
+
+.data-set tr.selected {
+  background-color: #f0f0f0;
+}
+
+.controls {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.add-comment {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+}
+
+.add-comment input,
+.add-comment textarea {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+.add-comment textarea {
+  min-height: 60px;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.optimistic-notice {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #fffde7;
+  border-left: 4px solid #ffd600;
+}
