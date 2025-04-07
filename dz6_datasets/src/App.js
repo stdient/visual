@@ -1,20 +1,17 @@
 import './App.css';
 import DataSet from './components/DataSet';
-import {useEffect, useState} from "react";
 
 function App() {
-    const [data, setData] = useState({});
-    useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/comments')
-        .then((res) => res.json())
-        .then(data => setData(data)).catch(err => console.log(err));
-    }, [])
-
-    const table_data = data.map(data => data.body);
+    const table_data = [
+        [1, 2, 3, 4, 5, 6],
+        [1, 2, 3, 4, 5, 6],
+        [1, 2, 3, 4, 5, 6],
+        [1, 2, 3, 4, 5, 6],
+    ]
 
     return (
         <div className="App">
-          <DataSet title={"Main table"} table_data={table_data} />
+            <DataSet title={"Main table"} table_data={table_data} />
         </div>
     );
 }
