@@ -37,14 +37,12 @@ const CommentsApp = () => {
       const newSelected = new Set(prevSelected);
 
       if (isCtrlPressed) {
-
         if (newSelected.has(rowId)) {
           newSelected.delete(rowId);
         } else {
           newSelected.add(rowId);
         }
       } else {
-
         if (newSelected.has(rowId)) {
           newSelected.clear();
         } else {
@@ -57,11 +55,9 @@ const CommentsApp = () => {
     });
   };
 
-
   const handleAddComment = async () => {
     const tempId = Date.now();
     const commentToAdd = { ...newComment, id: tempId };
-
 
     setComments(prev => [...prev, commentToAdd]);
     setOptimisticUpdates(prev => [...prev, tempId]);
@@ -80,24 +76,20 @@ const CommentsApp = () => {
 
       const data = await response.json();
 
-
       setComments(prev => prev.map(c => c.id === tempId ? data : c));
     } catch (err) {
       console.error('Error adding comment:', err);
-
       setComments(prev => prev.filter(c => c.id !== tempId));
     } finally {
       setOptimisticUpdates(prev => prev.filter(id => id !== tempId));
     }
   };
 
-
   const handleDeleteSelected = async () => {
     if (selectedRows.size === 0) return;
 
     const rowsToDelete = Array.from(selectedRows);
     const originalComments = [...comments];
-
 
     setComments(prev => prev.filter(c => !selectedRows.has(c.id)));
     setSelectedRows(new Set());
@@ -117,11 +109,8 @@ const CommentsApp = () => {
     }
   };
 
-
   const handleUpdateComment = async (id, updatedData) => {
     const originalComments = [...comments];
-
-
     setComments(prev => prev.map(c => c.id === id ? { ...c, ...updatedData } : c));
 
     try {
@@ -136,16 +125,13 @@ const CommentsApp = () => {
       if (!response.ok) throw new Error('Failed to update comment');
     } catch (err) {
       console.error('Error updating comment:', err);
-
       setComments(originalComments);
     }
   };
 
-
   const handleCellChange = (row, column, value) => {
     handleUpdateComment(row.id, { [column.key]: value });
   };
-
 
   const renderCell = (row, column) => {
     if (column.key === 'id') return row.id;
@@ -169,8 +155,6 @@ const CommentsApp = () => {
 
   return (
     <div className="comments-app">
-      <h1>Comments</h1>
-
       <div className="controls">
         <div className="add-comment">
           <h3>Add New Comment</h3>

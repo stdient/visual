@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 
 const TreeNode = ({ node, renderHeader, renderChildren, level = 0 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -50,19 +49,9 @@ const TreeNode = ({ node, renderHeader, renderChildren, level = 0 }) => {
   );
 };
 
-TreeNode.propTypes = {
-  node: PropTypes.shape({
-    header: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
-    children: PropTypes.array
-  }).isRequired,
-  renderHeader: PropTypes.func,
-  renderChildren: PropTypes.func,
-  level: PropTypes.number
-};
-
 const TreeView = ({ data, renderHeader, renderChildren }) => {
   return (
-    <div className="tree-view">
+    <div>
       <TreeNode
         node={data}
         renderHeader={renderHeader}
@@ -70,15 +59,6 @@ const TreeView = ({ data, renderHeader, renderChildren }) => {
       />
     </div>
   );
-};
-
-TreeView.propTypes = {
-  data: PropTypes.shape({
-    header: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
-    children: PropTypes.array
-  }).isRequired,
-  renderHeader: PropTypes.func,
-  renderChildren: PropTypes.func
 };
 
 export default TreeView;

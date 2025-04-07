@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import '../App.css'
 
 const DataSet = ({
@@ -62,19 +61,6 @@ const DataSet = ({
       </table>
     </div>
   );
-};
-
-DataSet.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object).isRequired,
-  columns: PropTypes.arrayOf(PropTypes.shape({
-    key: PropTypes.string.isRequired,
-    title: PropTypes.string
-  })),
-  renderHeader: PropTypes.func,
-  renderCell: PropTypes.func,
-  rowKey: PropTypes.string,
-  selectedRows: PropTypes.instanceOf(Set).isRequired,
-  onRowSelect: PropTypes.func.isRequired
 };
 
 export default DataSet;
