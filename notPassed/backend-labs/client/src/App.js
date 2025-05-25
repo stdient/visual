@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useOptimistic } from "react";
+import React, { useState, useOptimistic, useEffect } from "react";
 import DataSet from "./comps/DataSet";
 
 const App = () => {
@@ -24,17 +24,23 @@ const App = () => {
     }
   );
 
-  const fetchComments = () => {
-    fetch("https://jsonplaceholder.typicode.com/comments")
-      .then(response => response.json())
-      .then(data => {
-        setComments(data);
-        setLoading(false);
-      })
+  const API_URL = 'http://localhost:5018/comments';
+
+  const fetchComments = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch(API_URL);
+      const data = await response.json();
+      setComments(data);
+    } catch (error) {
+      console.error('Ошибка при загрузке:', error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
-    fetchComments();
+    fetchComments()
   }, []);
 
   const handleAddComment = async (newComment) => {
@@ -46,7 +52,7 @@ const App = () => {
 
     try {
       const response = await fetch(
-        "https://jsonplaceholder.typicode.com/comments",
+        API_URL,
         {
           method: "POST",
           body: JSON.stringify(newComment),
@@ -75,7 +81,7 @@ const App = () => {
 
     try {
       const deletePromises = idsToDelete.map((id) =>
-        fetch(`https://jsonplaceholder.typicode.com/comments/${id}`, {
+        fetch(`${API_URL}/${id}`, {
           method: "DELETE",
         })
       );
@@ -104,7 +110,7 @@ const App = () => {
 
     try {
       const response = await fetch(
-        `https://jsonplaceholder.typicode.com/comments/${originalComment.id}`,
+        `${API_URL}/${originalComment.id}`,
         {
           method: "PATCH",
           body: JSON.stringify(updatedComment),
