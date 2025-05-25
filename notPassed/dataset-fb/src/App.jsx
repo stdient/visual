@@ -1,6 +1,10 @@
 import DataSet from './comps/DataSet'
+<<<<<<< Updated upstream
 import './App.css'
 import { useState } from 'react'
+=======
+import UserInteraction from './comps/UserInteraction'
+>>>>>>> Stashed changes
 
 function App() {
   const data = [
@@ -137,7 +141,12 @@ function App() {
 
   return (
     <div style={main_container}>
+<<<<<<< Updated upstream
       <DataSet data={data} renderHeaders={displayHeaders} renderData={displayData} />
+=======
+      <UserInteraction></UserInteraction>
+      <DataSet data={tableData} renderHeaders={displayHeaders} renderData={displayData} />
+>>>>>>> Stashed changes
     </div>
   )
 }
