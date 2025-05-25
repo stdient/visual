@@ -1,43 +1,51 @@
 import { useState } from 'react'
 
 export default
-  function Search({ data }) {
+  function Search({ data, onSearch, onSort }) {
   const [searchTerm, setSearchTerm] = useState('');
+
+  const [sortKey, setSortKey] = useState("none");
+  const [sortOrder, setSortOrder] = useState("asc");
 
   const div = {
     margin: '10px',
+    height: '24px',
     width: '100vw',
     display: 'flex',
     justifyContent: 'center',
   }
 
-  const btn = {
-    width: '1.6em',
-    height: '1.6em',
-  }
+  const changeSearchTerm = (event) => {
+    setSearchTerm(event.target.value);
+    onSearch(event.target.value);
+  };
 
-  const handleSearch = (e) => {
-    const value = e.target.value;
-    setSearchTerm(value);
+  const changeSortKey = (event) => {
+    setSortKey(event.target.value);
+    onSort(event.target.value, sortOrder);
+  };
 
-    // const filteredResult = 
-  }
+  const changeSortDirection = (event) => {
+    setSortOrder(event.target.value);
+    onSort(sortKey, event.target.value);
+  };
 
   return (
     <div style={div}>
       {/* по названию книги и автору */}
       <input
         type="text"
-        onChange={handleSearch}></input>
-      <select>
-        <option>Название</option>
-        <option>Автор</option>
+        value={searchTerm}
+        onChange={changeSearchTerm}>
+      </input>
+      <select onChange={changeSortKey}>
+        <option value="title">Название</option>
+        <option value="authors">Автор</option>
       </select>
-      <select>
-        <option>Убывание</option>
-        <option>Возрастание</option>
+      <select onChange={changeSortDirection}>
+        <option value="asc">Убывание</option>
+        <option value="desc">Возрастание</option>
       </select>
-      <button style={btn}></button>
     </div>
   )
 }
