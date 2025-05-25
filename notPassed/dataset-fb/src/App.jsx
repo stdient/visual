@@ -1,45 +1,34 @@
-import DataSet from './comps/DataSet'
 import './App.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+
+import DataSet from './comps/DataSet'
 
 function App() {
-  const data = [
-    {
-      "postId": 1,
-      "id": 1,
-      "name": "id labore ex et quam laborum",
-      "email": "Eliseo@gardner.biz",
-      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"
-    },
-    {
-      "postId": 1,
-      "id": 2,
-      "name": "quo vero reiciendis velit similique earum",
-      "email": "Jayne_Kuhic@sydney.com",
-      "body": "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et"
-    },
-    {
-      "postId": 1,
-      "id": 3,
-      "name": "odio adipisci rerum aut animi",
-      "email": "Nikita@garfield.biz",
-      "body": "quia molestiae reprehenderit quasi aspernatur\naut expedita occaecati aliquam eveniet laudantium\nomnis quibusdam delectus saepe quia accusamus maiores nam est\ncum et ducimus et vero voluptates excepturi deleniti ratione"
-    },
-    {
-      "postId": 1,
-      "id": 4,
-      "name": "alias odio sit",
-      "email": "Lew@alysha.tv",
-      "body": "non et atque\noccaecati deserunt quas accusantium unde odit nobis qui voluptatem\nquia voluptas consequuntur itaque dolor\net qui rerum deleniti ut occaecati"
-    },
-    {
-      "postId": 1,
-      "id": 5,
-      "name": "vero eaque aliquid doloribus et culpa",
-      "email": "Hayden@althea.biz",
-      "body": "harum non quasi et ratione\ntempore iure ex voluptates in ratione\nharum architecto fugit inventore cupiditate\nvoluptates magni quo et"
-    },
-  ]
+  // добавил сюда, потому что хук не может быть раньше return
+  const [selectedRows, setSelected] = useState(new Set());
+
+  // загрузка данных с сайта
+  const [tableData, setTableData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const comments_url = 'https://jsonplaceholder.typicode.com/comments';
+
+  useEffect(() => {
+    fetch(comments_url)
+      .then(response => response.json())
+      .then(data => {
+        setTableData(data);
+        setLoading(false);
+      })
+      .catch(err => console.error(err));
+  }, []);
+  if (loading) return <div
+    style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '100vw',
+      height: '100vh'
+    }}>Loading...</div>;
 
   const displayHeaders = (headers) => {
     const cell = {
@@ -66,7 +55,6 @@ function App() {
     );
   }
 
-  const [selectedRows, setSelected] = useState(new Set());
 
   const displayData = (data) => {
     const cell = {
@@ -92,8 +80,10 @@ function App() {
           else newSelected.add(rowId);
         }
         else {
+          let add = true;
+          if (newSelected.has(rowId)) add = false;
           newSelected.clear();
-          if (!newSelected.has(rowId)) newSelected.add(rowId);
+          if (add) newSelected.add(rowId);
         }
 
         return newSelected;
@@ -128,16 +118,11 @@ function App() {
   }
 
   const main_container = {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100vh',
-    width: '100vw',
-  }
+  };
 
   return (
     <div style={main_container}>
-      <DataSet data={data} renderHeaders={displayHeaders} renderData={displayData} />
+      <DataSet data={tableData} renderHeaders={displayHeaders} renderData={displayData} />
     </div>
   )
 }
