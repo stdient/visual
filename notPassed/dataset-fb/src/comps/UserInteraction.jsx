@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 export default
-  function UserInteraction({ url }) {
+  function UserInteraction({ url, addOptimisticComment }) {
   const [isOpen, setOpen] = useState(false);
   const [newElement, setNewElement] = useState({
-    postId: 0,
     name: '',
     email: '',
     body: '',
@@ -31,15 +30,25 @@ export default
     }));
   }
 
-  const handleSubmit = (e) => {
+  const handleAddComment = async (e) => {
     e.preventDefault();
-    fetch(url, {
+    const tempId = Date.now();
+    const optimisticComment = { ...newElement, id: tempId };
+
+    addOptimisticComment({ type: "add", comment: optimisticComment });
+
+    const res = fetch(url, {
       method: 'POST',
       body: JSON.stringify(newElement),
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
       },
     });
+
+    if (!res.ok) throw new Error('failed to fetch');
+
+    const data = await res.json();
+    setNewElement((prev) => [...prev, data]);
   }
 
   return (
@@ -64,10 +73,7 @@ export default
 
         {
           isOpen &&
-          <form onSubmit={handleSubmit} style={formStyle}>
-            <label>postId:</label>
-            <input name="postId" value={newElement.postId} onChange={handleInput} type='number'></input>
-
+          <form onSubmit={handleAddComment} style={formStyle}>
             <label>name:</label>
             <input name="name" value={newElement.name} onChange={handleInput}></input>
 
