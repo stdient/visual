@@ -43,8 +43,8 @@ export default
         <option value="authors">Автор</option>
       </select>
       <select onChange={changeSortDirection}>
-        <option value="asc">Убывание</option>
-        <option value="desc">Возрастание</option>
+        <option value="asc">Возрастание</option>
+        <option value="desc">Убывание</option>
       </select>
     </div>
   )
