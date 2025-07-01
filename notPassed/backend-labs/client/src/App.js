@@ -62,7 +62,7 @@ const App = () => {
         }
       );
 
-      if (!response.ok) throw new Error("Failed to add comment");
+      if (!response.ok) throw new Error("Failed to add comment: ", response);
 
       const data = await response.json();
       setComments((prev) => [...prev, data]);

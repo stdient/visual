@@ -23,35 +23,38 @@ app.MapGet(
     "/comments",
     (CommentService commentService) =>
     {
-        commentService.GetAll();
+        return Results.Ok(commentService.GetAll());
     }
 );
 app.MapGet(
     "/comments/{id}",
     (int id, CommentService commentService) =>
     {
-        commentService.GetById(id);
+        var ret = commentService.GetById(id);
+        if (ret == null)
+            return Result.NotFound();
+        return Results.Ok(ret);
     }
 );
 app.MapPost(
     "/comments",
     (Comment comment, CommentService commentService) =>
     {
-        commentService.Add(comment);
+        return Result.Ok(commentService.Add(comment));
     }
 );
 app.MapPatch(
     "/comments/{id}",
     (Comment comment, CommentService commentService) =>
     {
-        commentService.Update(comment);
+        return Result.Ok(commentService.Update(comment));
     }
 );
 app.MapDelete(
     "/comments/{id}",
     (int id, CommentService commentService) =>
     {
-        commentService.Delete(id);
+        return Result.Ok(commentService.Delete(id));
     }
 );
 
